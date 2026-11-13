@@ -36,7 +36,7 @@ BookNest/
 1. Clone the repository:
 
 ```bash
-git clone:
+git clone:https://sabeenaedu23.github.io/BookNest/
 ```
 
 2. Open the project folder in Visual Studio Code.
