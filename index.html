@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BookNest – Discover your next favourite book. Explore fiction, business, technology and more.">
+  <title>BookNest | Discover Your Next Chapter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="announcement">
+    A little something for your next chapter — Free delivery on orders above ₹999
+  </div>
+
+  <header class="header">
+    <a href="#" class="logo">book<span>nest.</span></a>
+
+    <nav class="nav" id="nav">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#bestsellers">Bestsellers</a>
+      <a href="#about">Our Story</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+      </button>
+      <button class="icon-btn" id="wishlistToggle" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg>
+        <span class="count" id="wishCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartToggle" aria-label="Shopping cart">
+        <svg viewBox="0 0 24 24"><path d="M3 3h2l2.5 12h11l2-8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+        <span class="count" id="cartCount">0</span>
+      </button>
+      <button class="menu-btn" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span>
+        <h1>Some stories<br>stay with you <em>forever.</em></h1>
+        <p>Discover thoughtfully selected books that inspire new ideas, spark imagination and make every page worth turning.</p>
+        <div class="hero-buttons">
+          <a href="#collection" class="primary-btn">Explore Collection <span>↗</span></a>
+          <a href="#about" class="text-btn">Discover our story →</a>
+        </div>
+        <div class="hero-note">
+          <div class="avatars">
+            <span>R</span><span>A</span><span>M</span>
+          </div>
+          <p><strong>10,000+</strong> readers found their next favourite</p>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-circle"></div>
+        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=700" alt="Beautiful book collection">
+        <div class="floating-note">
+          <span>✦ EDITOR'S PICK</span>
+          <strong>Read. Reflect.<br>Repeat.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div><span>✦</span><p><strong>Curated collections</strong><small>Books worth your time</small></p></div>
+      <div><span>◇</span><p><strong>Quality guaranteed</strong><small>Every page matters</small></p></div>
+      <div><span>↗</span><p><strong>Fast delivery</strong><small>Stories at your doorstep</small></p></div>
+      <div><span>♡</span><p><strong>Made for readers</strong><small>A community of book lovers</small></p></div>
+    </section>
+
+    <section class="collection section" id="collection">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">THE BOOKSHELF</span>
+          <h2>Find your next <em>favourite.</em></h2>
+          <p>Explore stories, knowledge and ideas selected just for you.</p>
+        </div>
+        <span class="book-total" id="bookTotal">8 BOOKS</span>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <span>⌕</span>
+          <input type="search" id="searchInput" placeholder="Search books, authors...">
+        </div>
+        <select id="sortSelect" aria-label="Sort books">
+          <option value="featured">Sort: Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="az">Name: A to Z</option>
+        </select>
+      </div>
+
+      <div class="filters" id="filters">
+        <button class="filter active" data-category="All">All Books</button>
+        <button class="filter" data-category="Fiction">Fiction</button>
+        <button class="filter" data-category="Business">Business</button>
+        <button class="filter" data-category="Technology">Technology</button>
+        <button class="filter" data-category="Self-help">Self-help</button>
+        <button class="filter" data-category="Romance">Romance</button>
+      </div>
+
+      <div class="book-grid" id="bookGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span>⌕</span>
+        <h3>No books found</h3>
+        <p>Try another search or category.</p>
+        <button class="primary-btn" id="resetFilters">View all books</button>
+      </div>
+    </section>
+
+    <section class="editorial section" id="bestsellers">
+      <div class="editorial-image">
+        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1000" alt="Beautiful library shelves">
+      </div>
+      <div class="editorial-content">
+        <span class="eyebrow">A NOTE FROM OUR EDITORS</span>
+        <h2>More than books.<br><em>A world of possibilities.</em></h2>
+        <p>We believe every great book has the power to change the way you think, feel and see the world. Our collection is built around one simple idea: every reader deserves a story worth remembering.</p>
+        <a href="#collection" class="primary-btn">Explore our picks ↗</a>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <span>“</span>
+      <h2>A room without books<br>is like a body without a soul.</h2>
+      <p>— Marcus Tullius Cicero</p>
+    </section>
+
+    <section class="newsletter section">
+      <div>
+        <span class="eyebrow">THE BOOKNEST LETTER</span>
+        <h2>Good books.<br><em>Better conversations.</em></h2>
+        <p>Get reading recommendations, new arrivals and little literary surprises in your inbox.</p>
+      </div>
+      <form id="newsletterForm">
+        <input type="email" id="emailInput" placeholder="Your email address" required>
+        <button type="submit">Join the list ↗</button>
+        <small id="newsletterMessage">No spam. Just good stories.</small>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer" id="about">
+    <a href="#" class="logo">book<span>nest.</span></a>
+    <p>For the love of stories, ideas and everything in between.</p>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#collection">Shop books</a>
+      <a href="#bestsellers">Editor's picks</a>
+    </div>
+    <small>© 2026 BookNest. Crafted for curious minds.</small>
+  </footer>
+
+  <!-- Cart / Wishlist Side Panel -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="side-panel" id="sidePanel">
+    <div class="panel-header">
+      <h2 id="panelTitle">Your Bag</h2>
+      <button id="closePanel" aria-label="Close panel">✕</button>
+    </div>
+    <div class="panel-items" id="panelItems"></div>
+    <div class="panel-footer" id="panelFooter"></div>
+  </aside>
+
+  <!-- Book Preview -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="book-modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
